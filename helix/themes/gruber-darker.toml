@@ -4,11 +4,9 @@
 # A darker variant of the Gruber Dark theme for BBEdit by John Gruber.
 
 "string" = "green"
-
 "type" = { fg = "yellow", modifiers = ["bold"] }
 "type.builtin" = { fg = "yellow", modifiers = ["bold"] }
 "comment" = "brown"
-
 "keyword" = { fg = "yellow", modifiers = ["bold"] }
 "keyword.directive" = "quartz"
 "function" = { fg = "#95a99f" }
@@ -16,11 +14,9 @@
 "ui.cursor" = { fg = "background-1", bg = "yellow", modifiers = ["rapid_blink"] }
 "ui.popup" = { bg = "background" }
 
-
 "diff.plus" = "green"
 "diff.delta" = "yellow"
 "diff.minus" = "red"
-
 
 "warning" = "yellow"
 "error" = "red"
@@ -28,11 +24,9 @@
 "hint" = "wisteria"
 
 "ui.background" = { bg = "background-1" }
-
 "ui.linenr" = "background_2"
 "ui.linenr.selected" = "yellow"
 "ui.selection" = { bg = "#3a3d41" }
-
 
 
 
@@ -43,12 +37,10 @@ foreground = "#e4e4ef"
 foreground_1 = "#f4f4ff"
 foreground_2 = "#f5f5f5"
 white = "#ffffff"
-
 black = "#000000"
 background-1 = "#101010"
 background = "#181818"
 background_1 = "#282828"
-
 background_2 = "#453d41"
 background_3 = "#484848"
 background_4 = "#52494e"
@@ -56,9 +48,7 @@ red-1 = "#c73c3f"
 red = "#f43841"
 red_1 = "#ff4f58"
 green = "#73c936"
-
 yellow = "#ffdd33"
-
 brown = "#cc8c3c"
 quartz = "#95a99f"
 niagara-2 = "#303540"
