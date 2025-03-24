@@ -11,7 +11,7 @@ auto-completion = true
 auto-format = true
 completion-replace = true
 mouse = true
-end-of-line-diagnostics = "hint"
+end-of-line-diagnostics = "info"
 
 [editor.soft-wrap]
 enable = true
@@ -20,7 +20,6 @@ enable = true
 character = "▏"  # Some characters that work well: "▏", "┆", "┊", "╎"
 render = true
 skip-levels = 0
-
 
 
 # [editor.cursor-shape]
@@ -37,10 +36,12 @@ right = ["version-control","separator" ,  "diagnostics","file-encoding",]
 V = ":sh hemux"
 h = ":sh tmux popup -d \"#{pane_current_path}\" -xC -yC -w80%% -h80%% -E "
 v = ":sh tmux split-window -v -p 20"
+y = ":sh tmux split-window -h -p 40 'yazi .'"
+m = ["save_selection"]
 
 
-[editor.inline-diagnostics]
-cursor-line = "warning"
+# [editor.inline-diagnostics]
+# cursor-line = "warning"
 
 [editor.lsp]
 # Enable inline hints
@@ -50,8 +51,8 @@ display-messages = true
 
 [keys.normal]
 # Quick iteration on config changes
-C-o = ":config-open"
-C-r = ":config-reload"
+# C-o = ":config-open"
+# C-r = ":config-reload"
 "\\" = ":vsplit"
 "|" = ":hsplit"
 C-s = ":write"

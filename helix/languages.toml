@@ -29,8 +29,11 @@ formatter = { command = "prettier", args = ["--parser", "toml"] }
 
 [[language]]
 name = "c"
-formatter = { command = "clang-format", args = ["--assume-filename", "%file"] }
+formatter = { command = "clang-format", args = ["-style={IndentWidth: 4, TabWidth: 4,  PackConstructorInitializers: Never, SortIncludes: false,ColumnLimit: 0}"] }
 auto-format = true
+
+# [language-server.clangd.config]
+# fallbackFlags = ["-DUNIT_TESTING"]
 
 [[language]]
 name = "json"
