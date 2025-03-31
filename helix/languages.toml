@@ -1,6 +1,6 @@
 [language-server.zls]
 # omit the following line if `zls` is in your PATH
-command = "/home/dogeraz/src/zls/zig-out/bin/zls"
+command = "/home/niko/src/zls/zig-out/bin/zls"
 # There are two ways to set config options:
 #   - edit your `zls.json` that applies to any editor that uses ZLS
 #   - set in-editor config options with the `config.<name>` fields below.
@@ -92,5 +92,3 @@ rangeVariableTypes = true
 
 # [language-server.golangci-lint-lsp.config]
 # command = ["golangci-lint", "run", "--out-format", "json", "--issues-exit-code=1"]
-
-
