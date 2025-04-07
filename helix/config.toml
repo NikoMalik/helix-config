@@ -16,12 +16,24 @@ end-of-line-diagnostics = "info"
 [editor.soft-wrap]
 enable = true
 
-[editor.indent-guides]
-character = "▏"  # Some characters that work well: "▏", "┆", "┊", "╎"
-render = true
-skip-levels = 0
+# [editor.indent-guides]
+# character = "▏"  # Some characters that work well: "▏", "┆", "┊", "╎"
+# render = true
+# skip-levels = 0
 
 
+
+
+[editor.whitespace.render]
+space = "all"
+tab = "none"
+nbsp = "none"
+nnbsp = "none"
+
+
+# [editor.whitespace.characters]
+
+# tab = "→"
 # [editor.cursor-shape]
 # insert = "bar"
 

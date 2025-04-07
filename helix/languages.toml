@@ -69,7 +69,7 @@ completeUnimported = true
 #   shadow = true,
 # }
 [language-server.gopls.config.analyses]
-"fieldalignment" = true
+# "fieldalignment" = true
 "nilness" = true
 shadow = true
 modernize = false
