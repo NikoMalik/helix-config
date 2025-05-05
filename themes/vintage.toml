@@ -1,10 +1,15 @@
+# Vintage Theme for the Helix Editor
+# Author: rojebd<roniellberrios@gmail.com>
+# Repo: https://github.com/rojebd/vintage
+# This theme is vintage inspired
+# Info: I made this theme one afternoon because my bus was late and I stayed home :)
 
 attribute = "#a7bf67" 
 keyword = "#A4A2B4"  
 "keyword.directive" = "light-gray" 
 namespace = "#7095bf" 
 punctuation = "white" 
-"punctuation.delimeter" = "white" 
+"punctuation.delimiter" = "white"
 operator = "muddy" 
 special = "pink" 
 "variable.other.member" = "green" 
@@ -18,12 +23,12 @@ function = "muddy"
 "function.macro" = "muddy" 
 "function.builtin" = "#db985e" 
 tag = "#d37a78" 
-comment = "light-gray" 
+comment = "#484848" 
 constant = "#A5C4D4" 
 "constant.builtin" = "bright-yellow" 
 string = "#d6a560" 
 "constant.numeric" = "#b577b0" 
-"constant.character.escape" = "#A54C4D4" 
+"constant.character.escape" = "#c95c56" 
 label = "#abcc8a" 
 
 "markup.heading" = "bright-pink" 
@@ -34,16 +39,18 @@ label = "#abcc8a"
 "markup.link.text" = "orange" 
 "markup.raw" = "gray" 
 
-"diff.plus" = "bright-green" 
-"diff.minus" = "redish" 
-"diff.delta" = "blueish" 
+"diff.plus" =  { fg = "bright-green", modifiers = ["bold"] }
+"diff.minus" = { fg = "redish",       modifiers = ["bold"] }
+"diff.delta" = { fg = "blueish",      modifiers = ["bold"] }
 
 "ui.background" = { bg = "background" } 
 "ui.background.separator" = { fg = "white" } 
 "ui.linenr" = { fg = "#747575" } 
 "ui.linenr.selected" = { fg = "#c7dddd" } 
 "ui.statusline" = { fg = "black", bg = "gray" } 
-"ui.statusline.inactive" = { fg = "gray", bg = "#3c3836" } 
+"ui.statusline.inactive" = { fg = "gray", bg = "#3c3836" }
+"ui.virtual.whitespace" = { fg = "#303540" }
+
 "ui.popup" = { bg = "#3b3b3d" } 
 "ui.window" = { fg = "yellow" } 
 "ui.help" = { bg = "#35353a", fg = "light-gray" } 
@@ -70,11 +77,7 @@ label = "#abcc8a"
 "diagnostic.hint" = { underline = { color = "bright-yellow", style = "curl" } } 
 "diagnostic.info" = { underline = { color = "bright-yellow", style = "curl" } }  
 "diagnostic.warning" = { underline = { color = "bright-yellow", style = "curl" } } 
-"diagnostic.error" = { underline = { color = "bright-pink", style = "curl" } }
-
-
-"ui.virtual.whitespace" = { fg = "#303540" }
-
+"diagnostic.error" = { underline = { color = "bright-pink", style = "curl" } } 
 
 warning = "bright-yellow" 
 error = "bright-pink" 
@@ -83,7 +86,7 @@ hint = "bright-yellow"
 
 [palette]
 bright-pink = "#DE6468"
-background = "#1f1f21"
+background = "#000000"
 green = "#778e61"
 light-green = "#9B9B7A"
 brown = "#BAA587"
@@ -99,3 +102,4 @@ purple-ish = "#997B66"
 bright-green = "#4F6F52"
 blueish = "#3876BF"
 redish = "#B80000"
+light-gray = "#cc8c3c"

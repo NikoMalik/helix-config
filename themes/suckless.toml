@@ -1,0 +1,115 @@
+# Suckless-Inspired theme for Helix
+# Inspired by the DWM color palette from suckless.org
+# Enhanced syntax highlighting for functions, structures, and types
+
+# Syntax highlighting
+"attribute" = "cyan_light" # Types, labels
+"type" = "cyan_light" # Types
+"type.builtin" = "cyan_light" # Built-in types
+"type.parameter" = "cyan_light" # Type parameters
+"type.enum" = "cyan_light" # Enums
+"type.enum.variant" = "cyan_light" # Enum variants
+"constructor" = "col_gray4" # Constructors
+"constant" = "col_gray4" # Constants
+"constant.builtin" = "col_gray4" # Built-in constants
+"constant.builtin.boolean" = "col_gray4" # Booleans
+"constant.character" = "col_cyan" # Characters
+"constant.character.escape" = "col_gray2" # Escape sequences
+"constant.numeric" = "col_gray4" # Numbers
+"constant.numeric.integer" = "col_gray4" # Integers
+"constant.numeric.float" = "col_gray4" # Floats
+"string" = "col_cyan" # Strings
+"string.regexp" = "col_cyan" # Regular expressions
+"string.special" = "col_cyan" # Special strings
+"string.special.path" = "col_gray3" # Paths
+"string.special.url" = "col_gray3" # URLs
+"string.special.symbol" = "col_cyan" # Symbols
+"comment" = "col_gray2" # Comments
+"comment.line" = "col_gray2" # Line comments
+"comment.block" = "col_gray2" # Block comments
+"comment.block.documentation" = "col_gray2" # Doc comments
+"variable" = "col_gray3" # Variables
+"variable.builtin" = "col_gray3" # Built-in variables
+"variable.parameter" = "col_gray3" # Parameters
+"variable.other" = "col_gray3" # Other variables
+"variable.other.member" = "col_gray3" # Fields
+"label" = "cyan_light" # Labels
+"punctuation" = "col_gray2" # Punctuation
+"punctuation.delimiter" = "col_gray2" # Delimiters
+"punctuation.bracket" = "col_gray2" # Brackets
+"punctuation.special" = "col_gray2" # Special punctuation
+"keyword" = { fg = "col_gray4", modifiers = ["italic"] } # Keywords
+"keyword.control" = { fg = "col_gray4", modifiers = ["italic"] } # Control keywords
+"keyword.control.conditional" = { fg = "col_gray4", modifiers = ["italic"] } # Conditionals
+"keyword.control.repeat" = { fg = "col_gray4", modifiers = ["italic"] } # Loops
+"keyword.control.import" = "col_gray3" # Imports
+"keyword.control.return" = { fg = "col_gray4", modifiers = ["italic"] } # Return
+"keyword.control.exception" = "col_cyan" # Exceptions
+"keyword.operator" = "col_gray3" # Operators
+"keyword.directive" = "col_gray4" # Directives
+"keyword.function" = { fg = "col_gray4", modifiers = ["italic"] } # Function keywords
+"keyword.storage" = "cyan_light" # Storage classes
+"keyword.storage.type" = "cyan_light" # Type storage
+"keyword.storage.modifier" = "cyan_light" # Modifiers
+"operator" = "col_gray3" # Operators
+"function" = "col_gray4" # Functions
+"function.builtin" = "col_gray4" # Built-in functions
+"function.method" = "col_gray4" # Methods
+"function.macro" = "col_gray4" # Macros
+"function.special" = "col_gray4" # Special functions
+"tag" = "cyan_light" # Tags
+"tag.builtin" = "cyan_light" # Built-in tags
+"namespace" = "cyan_light" # Namespaces
+"special" = "col_cyan" # Special
+
+# Diff highlighting
+"diff.plus" = "col_cyan" # Added lines
+"diff.minus" = "col_gray4" # Removed lines
+"diff.delta" = "col_gray2" # Changed lines
+
+# UI elements
+"ui.background" = { bg = "col_gray1" } # Main background
+"ui.cursor" = { fg = "col_gray1", bg = "col_gray4" } # Cursor
+"ui.cursor.match" = { bg = "col_gray2", modifiers = ["bold"] } # Cursor match
+"ui.gutter" = { bg = "col_gray1" } # Gutter
+"ui.gutter.selected" = { bg = "col_gray1" } # Selected gutter
+"ui.linenr" = "col_gray2" # Line numbers
+"ui.linenr.selected" = "col_gray3" # Selected line number
+"ui.statusline" = { fg = "col_gray3", bg = "col_gray2" } # Status line
+"ui.statusline.inactive" = { fg = "col_gray2", bg = "col_gray1" } # Inactive status line
+"ui.bufferline" = { fg = "col_gray2", bg = "col_gray1" } # Buffer line
+"ui.bufferline.active" = { fg = "col_gray4", bg = "col_cyan" } # Active buffer
+"ui.bufferline.background" = { bg = "col_gray1" } # Buffer line background
+"ui.popup" = { bg = "col_gray1" } # Popup menu
+"ui.menu" = { fg = "col_gray3", bg = "col_gray1" } # Menu
+"ui.menu.selected" = { fg = "col_gray1", bg = "col_gray4" } # Selected menu item
+"ui.menu.scroll" = { fg = "col_gray2", bg = "col_gray1" } # Menu scroll
+"ui.text" = "col_gray3" # Main text
+"ui.selection" = { bg = "col_cyan" } # Text selection
+"ui.selection.primary" = { bg = "col_cyan" } # Primary selection
+"ui.virtual.indent-guide" = "col_gray2" # Indent guides
+"ui.virtual.inlay-hint" = "col_gray2" # Inlay hints
+"ui.virtual.whitespace" = "col_gray2" # Whitespace
+
+# Diagnostics
+"warning" = "col_gray4" # Warnings
+"error" = "col_cyan" # Errors
+"info" = "col_gray2" # Info
+"hint" = "col_gray2" # Hints
+"diagnostic" = { underline = { style = "dashed" } } # General diagnostics
+"diagnostic.error" = { underline = { color = "col_cyan", style = "curl" }, modifiers = ["slow_blink"] } # Error diagnostics
+"diagnostic.warning" = { fg = "col_gray4", modifiers = ["underline"] } # Warning diagnostics
+"diagnostic.info" = { fg = "col_gray2", modifiers = ["underline"] } # Info diagnostics
+"diagnostic.hint" = { fg = "col_gray2", modifiers = ["underline"] } # Hint diagnostics
+"diagnostic.unnecessary" = { modifiers = ["dim"] } # Unnecessary code
+
+
+
+[palette]
+col_gray1 = "#000000" # Background
+col_gray2 = "#444444" # Secondary UI, comments
+col_gray3 = "#bbbbbb" # Main text, variables
+col_gray4 = "#eeeeee" # Functions, constants, keywords
+col_cyan = "#005577" # Selections, strings, errors
+cyan_light = "#337799" # Types, structures, labels
+gray_mid = "#777777" # Intermediate gray for subtle highlights
