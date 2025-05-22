@@ -45,7 +45,7 @@
 
 
 "ui.virtual.indent-guide" = { fg = "#252525" }
-"ui.virtual.whitespace" = { fg = "#252525" }
+"ui.virtual.whitespace" = { fg = "#303540" }
 
 
 
@@ -56,8 +56,8 @@ foreground = "#e4e4ef"
 foreground_1 = "#f4f4ff"
 foreground_2 = "#f5f5f5"
 white = "#ffffff"
-black = "#181818"
-background-1 = "#101010"
+black = "#000000"
+background-1 = "#181818"
 background = "#181818"
 background_1 = "#282828"
 background_2 = "#453d41"

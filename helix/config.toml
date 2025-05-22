@@ -1,21 +1,25 @@
-theme = "gruber-darker"
-
+# theme = "earl_grey"
+# theme="gruber_2"
+# theme="jetbrains_dark"
+theme="term16_dark"
+# theme="vintage"
 
 # space d to see errors
 
 [editor]
 true-color = true
-scrolloff = 12
+# scrolloff = 10
 auto-save = true
 auto-completion = true
 auto-format = true
 completion-replace = true
 mouse = true
 end-of-line-diagnostics = "info"
+# end-of-line-diagnostics = "hint"
+
 
 [editor.soft-wrap]
 enable = true
-
 # [editor.indent-guides]
 # character = "▏"  # Some characters that work well: "▏", "┆", "┊", "╎"
 # render = true
@@ -25,7 +29,7 @@ enable = true
 
 
 [editor.whitespace.render]
-space = "all"
+space = "none" #whitespaces
 tab = "none"
 nbsp = "none"
 nnbsp = "none"
@@ -39,8 +43,12 @@ nnbsp = "none"
 
 
 [editor.statusline]
-left = ["separator" , "file-name",  "file-modification-indicator" ]
+left = ["total-line-numbers",  "separator" , "file-name",  "file-modification-indicator" ]
 right = ["version-control","separator" ,  "diagnostics","file-encoding",]
+
+[editor.gutters]
+layout = ["diff", "diagnostics", "line-numbers", "spacer"]
+
 
 
 
@@ -52,8 +60,10 @@ y = ":sh tmux split-window -h -p 40 'yazi .'"
 m = ["save_selection"]
 
 
-# [editor.inline-diagnostics]
-# cursor-line = "warning"
+[editor.inline-diagnostics]
+cursor-line = "warning"
+# other-lines = "hint"
+other-lines = "disable"
 
 [editor.lsp]
 # Enable inline hints
@@ -70,13 +80,12 @@ display-messages = true
 C-s = ":write"
 
 # Some nice Helix stuff
-C-h = "select_prev_sibling"
+# C-h = "select_prev_sibling"
 # C-j = "shrink_selection"
 # C-k = "expand_selection"
-C-l = "select_next_sibling"
+# C-l = "select_next_sibling"
 # C-d = ["half_page_down", "center"]
 # C-u = ["half_page_up", "center"]
-A-down = ":sh tmux move-line down"
 # A-j = ":sh tmux move-line down"
 
 C-j = [ "keep_primary_selection", "move_line_down", "extend_to_line_bounds", "extend_line_above", "split_selection_on_newline", "select_mode", "goto_line_end_newline", "normal_mode", "rotate_selection_contents_forward", "keep_primary_selection", "move_line_down" ]
@@ -100,7 +109,7 @@ O = ["open_above", "normal_mode"]
 G = "goto_file_end"
 "%" = "match_brackets"
 V = ["select_mode", "extend_to_line_bounds"]
-C = ["extend_to_line_end", "yank_main_selection_to_clipboard", "delete_selection", "insert_mode"]
+# C = ["extend_to_line_end", "yank_main_selection_to_clipboard", "delete_selection", "insert_mode"]
 D = ["extend_to_line_end", "yank_main_selection_to_clipboard", "delete_selection"]
 S = "surround_add" # Would be nice to be able to do something after this but it isn't chainable
 
@@ -197,7 +206,7 @@ j = { k = ["normal_mode", "collapse_selection"] }
 "^" = "goto_first_nonwhitespace"
 G = "goto_file_end"
 D = ["extend_to_line_bounds", "delete_selection", "normal_mode"]
-C = ["goto_line_start", "extend_to_line_bounds", "change_selection"]
+# C = ["goto_line_start", "extend_to_line_bounds", "change_selection"]
 
 "%" = "match_brackets"
 S = "surround_add" # Basically 99% of what I use vim-surround for
@@ -211,6 +220,7 @@ a = "select_textobject_around"
 # Some extra binds to allow us to insert/append in select mode because it's nice with multiple cursors
 tab = ["insert_mode", "collapse_selection"] # tab is read by most terminal editors as "C-i"
 C-a = ["append_mode", "collapse_selection"]
+C = ["search_selection", "search_next" ]
 
 # Make selecting lines in visual mode behave sensibly
 k = ["extend_line_up", "extend_to_line_bounds"]
