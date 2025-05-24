@@ -8,7 +8,7 @@ theme="term16_dark"
 
 [editor]
 true-color = true
-scrolloff = 15
+# scrolloff = 10
 auto-save = true
 auto-completion = true
 auto-format = true
@@ -43,8 +43,12 @@ nnbsp = "none"
 
 
 [editor.statusline]
-left = ["separator" , "file-name",  "file-modification-indicator" ]
+left = ["total-line-numbers",  "separator" , "file-name",  "file-modification-indicator" ]
 right = ["version-control","separator" ,  "diagnostics","file-encoding",]
+
+[editor.gutters]
+layout = ["diff", "diagnostics", "line-numbers", "spacer"]
+
 
 
 
@@ -202,7 +206,7 @@ j = { k = ["normal_mode", "collapse_selection"] }
 "^" = "goto_first_nonwhitespace"
 G = "goto_file_end"
 D = ["extend_to_line_bounds", "delete_selection", "normal_mode"]
-C = ["goto_line_start", "extend_to_line_bounds", "change_selection"]
+# C = ["goto_line_start", "extend_to_line_bounds", "change_selection"]
 
 "%" = "match_brackets"
 S = "surround_add" # Basically 99% of what I use vim-surround for
@@ -216,6 +220,7 @@ a = "select_textobject_around"
 # Some extra binds to allow us to insert/append in select mode because it's nice with multiple cursors
 tab = ["insert_mode", "collapse_selection"] # tab is read by most terminal editors as "C-i"
 C-a = ["append_mode", "collapse_selection"]
+C = ["search_selection", "search_next" ]
 
 # Make selecting lines in visual mode behave sensibly
 k = ["extend_line_up", "extend_to_line_bounds"]
