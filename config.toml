@@ -1,30 +1,39 @@
-# theme = "earl_grey"
-# theme="gruber_2"
-# theme="jetbrains_dark"
-theme="term16_dark"
-# theme="vintage"
+theme = "dangion"
+# theme="term16_dark"
+# theme="autumn_night"
 
 # space d to see errors
 
 [editor]
 true-color = true
-# scrolloff = 10
+scrolloff = 3
 auto-save = true
 auto-completion = true
 auto-format = true
 completion-replace = true
 mouse = true
 end-of-line-diagnostics = "info"
+line-number = "relative"
+
+[editor.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
+'<' = '>'
+
+
 # end-of-line-diagnostics = "hint"
 
 
 [editor.soft-wrap]
 enable = true
+wrap-at-text-width = true
 # [editor.indent-guides]
 # character = "▏"  # Some characters that work well: "▏", "┆", "┊", "╎"
 # render = true
 # skip-levels = 0
-
 
 
 
@@ -38,13 +47,19 @@ nnbsp = "none"
 # [editor.whitespace.characters]
 
 # tab = "→"
-# [editor.cursor-shape]
-# insert = "bar"
+[editor.cursor-shape]
+insert = "block"
+select = "block"
+normal = "block"
+
+
+
 
 
 [editor.statusline]
-left = ["total-line-numbers",  "separator" , "file-name",  "file-modification-indicator" ]
-right = ["version-control","separator" ,  "diagnostics","file-encoding",]
+left = ["total-line-numbers",  "separator","spacer", "version-control","spacer", "file-name",  "file-modification-indicator" ]
+# center
+right = ["diagnostics","file-encoding",]
 
 [editor.gutters]
 layout = ["diff", "diagnostics", "line-numbers", "spacer"]
@@ -54,16 +69,24 @@ layout = ["diff", "diagnostics", "line-numbers", "spacer"]
 
 [keys.normal.space]
 V = ":sh hemux"
-h = ":sh tmux popup -d \"#{pane_current_path}\" -xC -yC -w80%% -h80%% -E "
+# h = ":sh tmux popup -d \"#{pane_current_path}\" -xC -yC -w80%% -h80%% -E "
 v = ":sh tmux split-window -v -p 20"
-y = ":sh tmux split-window -h -p 40 'yazi .'"
-m = ["save_selection"]
-
+n = ":sh tmux split-window -h -b -l 40 'yazi'"
+t = ":sh git blame -L %{cursor_line},%{cursor_line} %{buffer_name}"
+# n = [
+#   ':sh rm -f /tmp/unique-file',
+#   ':sh rm -f /tmp/unique-cwd-file',
+#   ":insert-output yazi --chooser-file=/tmp/unique-file --cwd-file=/tmp/unique-cwd-file",
+#   ':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+#   ':open %sh{cat /tmp/unique-file}',
+#   ':cd %sh{cat /tmp/unique-cwd-file}',
+#   ':redraw',
+# ]
 
 [editor.inline-diagnostics]
 cursor-line = "warning"
-# other-lines = "hint"
-other-lines = "disable"
+other-lines = "hint"
+#other-lines = "disable"
 
 [editor.lsp]
 # Enable inline hints
@@ -71,163 +94,51 @@ display-inlay-hints = false
  # Show LSP messages in the status line
 display-messages = true
 
+[keys.insert.j]
+k = "normal_mode" # Maps `jk` to exit insert mode
+
+
+
+
+[keys.insert]
+"C-d" = "delete_word_forward"
+"del" = "delete_char_forward"
+
+
+
 [keys.normal]
 # Quick iteration on config changes
 # C-o = ":config-open"
 # C-r = ":config-reload"
+G = "goto_file_end"
 "\\" = ":vsplit"
 "|" = ":hsplit"
-C-s = ":write"
+"C-C" = "copy_selection_on_prev_line"
+C-k = [
+  "yank_main_selection_to_clipboard",
+  "delete_selection",
+  "move_line_up",
+  "paste_clipboard_before",
+  "select_mode",
+]
+"C-e" = "move_parent_node_end"
+"C-b" = "move_parent_node_start"
+# "C-s" = "split_selection_on_newline"
 
-# Some nice Helix stuff
-# C-h = "select_prev_sibling"
-# C-j = "shrink_selection"
-# C-k = "expand_selection"
-# C-l = "select_next_sibling"
-# C-d = ["half_page_down", "center"]
-# C-u = ["half_page_up", "center"]
-# A-j = ":sh tmux move-line down"
+m = { t = "remove_primary_selection"}
+"C-(" = "rotate_selection_contents_backward"
+"C-)" = "rotate_selection_contents_forward"
 
-C-j = [ "keep_primary_selection", "move_line_down", "extend_to_line_bounds", "extend_line_above", "split_selection_on_newline", "select_mode", "goto_line_end_newline", "normal_mode", "rotate_selection_contents_forward", "keep_primary_selection", "move_line_down" ]
-C-k = [ "keep_primary_selection", "extend_to_line_bounds", "extend_line_above", "split_selection_on_newline", "select_mode", "goto_line_end_newline", "normal_mode", "rotate_selection_contents_forward", "keep_primary_selection" ]
-# A-up = ":sh tmux move-line up"
-# A-k = ":sh tmux move-line up"
-g = { d = "goto_definition" }
+C-j = [
+  "yank_main_selection_to_clipboard",
+  "delete_selection",
+  "move_line_down",
+  "paste_clipboard_before",
+  "select_mode",
+]
 
-
-
-# Personal preference
-o = ["open_below", "normal_mode"]
-O = ["open_above", "normal_mode"]
-
-# Muscle memory
-"{" = ["goto_prev_paragraph", "collapse_selection"]
-"}" = ["goto_next_paragraph", "collapse_selection"]
-0 = "goto_line_start"
-"$" = "goto_line_end"
-"^" = "goto_first_nonwhitespace"
-G = "goto_file_end"
-"%" = "match_brackets"
-V = ["select_mode", "extend_to_line_bounds"]
-# C = ["extend_to_line_end", "yank_main_selection_to_clipboard", "delete_selection", "insert_mode"]
-D = ["extend_to_line_end", "yank_main_selection_to_clipboard", "delete_selection"]
-S = "surround_add" # Would be nice to be able to do something after this but it isn't chainable
-
-# Clipboards over registers ye ye
-
-x = "delete_selection"
-p = ["paste_clipboard_after", "collapse_selection"]
-P = ["paste_clipboard_before", "collapse_selection"]
-# Would be nice to add ya and yi, but the surround commands can't be chained
-Y = ["extend_to_line_end", "yank_main_selection_to_clipboard", "collapse_selection"]
-
-# Uncanny valley stuff, this makes w and b behave as they do Vim
-
-w = ["move_next_word_start", "move_char_right", "collapse_selection"]
-W = ["move_next_long_word_start", "move_char_right", "collapse_selection"]
-e = ["move_next_word_end", "collapse_selection"]
-E = ["move_next_long_word_end", "collapse_selection"]
-b = ["move_prev_word_start", "collapse_selection"]
-B = ["move_prev_long_word_start", "collapse_selection"]
-
-
-# If you want to keep the selection-while-moving behaviour of Helix, this two lines will help a lot,
-# especially if you find having text remain selected while you have switched to insert or append mode
-#
-
-# There is no real difference if you have overridden the commands bound to 'w', 'e' and 'b' like above
-# But if you really want to get familiar with the Helix way of selecting-while-moving, comment the
-# bindings for 'w', 'e', and 'b' out and leave the bindings for 'i' and 'a' active below. A world of difference!
-i = ["insert_mode", "collapse_selection"]
-a = ["append_mode", "collapse_selection"]
-
-
-# Undoing the 'd' + motion commands restores the selection which is annoying
-u = ["undo", "collapse_selection"]
-
-# Escape the madness! No more fighting with the cursor! Or with multiple cursors!
-esc = ["collapse_selection", "keep_primary_selection"]
-
-# Search for word under cursor
-
-"*" = ["move_char_right", "move_prev_word_start", "move_next_word_end", "search_selection", "search_next"]
-"#" = ["move_char_right", "move_prev_word_start", "move_next_word_end", "search_selection", "search_prev"]
-
-
-# Make j and k behave as they do Vim when soft-wrap is enabled
-j = "move_line_down"
-k = "move_line_up"
-
-# Extend and select commands that expect a manual input can't be chained
-# I've kept d[X] commands here because it's better to at least have the stuff you want to delete
-# selected so that it's just a keystroke away to delete
-[keys.normal.d]
-d = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "delete_selection"]
-t = ["extend_till_char"]
-s = ["surround_delete"]
-
-i = ["select_textobject_inner"]
-a = ["select_textobject_around"]
-j = ["select_mode", "extend_to_line_bounds", "extend_line_below", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
-
-down = ["select_mode", "extend_to_line_bounds", "extend_line_below", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
-k = ["select_mode", "extend_to_line_bounds", "extend_line_above", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
-up = ["select_mode", "extend_to_line_bounds", "extend_line_above", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
-G = ["select_mode", "extend_to_line_bounds", "goto_last_line", "extend_to_line_bounds", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
-w = ["move_next_word_start", "yank_main_selection_to_clipboard", "delete_selection"]
-W = ["move_next_long_word_start", "yank_main_selection_to_clipboard", "delete_selection"]
-g = { g = ["select_mode", "extend_to_line_bounds", "goto_file_start", "extend_to_line_bounds", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"] }
-
-[keys.normal.y]
-y = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "normal_mode", "collapse_selection"]
-j = ["select_mode", "extend_to_line_bounds", "extend_line_below", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
-down = ["select_mode", "extend_to_line_bounds", "extend_line_below", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
-k = ["select_mode", "extend_to_line_bounds", "extend_line_above", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
-up = ["select_mode", "extend_to_line_bounds", "extend_line_above", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
-G = ["select_mode", "extend_to_line_bounds", "goto_last_line", "extend_to_line_bounds", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
-w = ["move_next_word_start", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
-W = ["move_next_long_word_start", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
-g = { g = ["select_mode", "extend_to_line_bounds", "goto_file_start", "extend_to_line_bounds", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"] }
-
-[keys.insert]
-# Escape the madness! No more fighting with the cursor! Or with multiple cursors!
-
-esc = ["collapse_selection", "normal_mode"]
-j = { k = ["normal_mode", "collapse_selection"] }
 
 [keys.select]
-# Muscle memory
-"{" = ["extend_to_line_bounds", "goto_prev_paragraph"]
-
-"}" = ["extend_to_line_bounds", "goto_next_paragraph"]
-0 = "goto_line_start"
-"$" = "goto_line_end"
-
-"^" = "goto_first_nonwhitespace"
-G = "goto_file_end"
-D = ["extend_to_line_bounds", "delete_selection", "normal_mode"]
-# C = ["goto_line_start", "extend_to_line_bounds", "change_selection"]
-
-"%" = "match_brackets"
-S = "surround_add" # Basically 99% of what I use vim-surround for
-u = ["switch_to_lowercase", "collapse_selection", "normal_mode"]
-U = ["switch_to_uppercase", "collapse_selection", "normal_mode"]
-
-# Visual-mode specific muscle memory
-i = "select_textobject_inner"
-a = "select_textobject_around"
-
-# Some extra binds to allow us to insert/append in select mode because it's nice with multiple cursors
-tab = ["insert_mode", "collapse_selection"] # tab is read by most terminal editors as "C-i"
-C-a = ["append_mode", "collapse_selection"]
-C = ["search_selection", "search_next" ]
-
-# Make selecting lines in visual mode behave sensibly
-k = ["extend_line_up", "extend_to_line_bounds"]
-j = ["extend_line_down", "extend_to_line_bounds"]
-
-
-
 C-k = [
   "yank_main_selection_to_clipboard",
   "delete_selection",
@@ -244,17 +155,3 @@ C-j = [
   "paste_clipboard_before",
   "select_mode",
 ]
-
-
-# Clipboards over registers ye ye
-d = ["yank_main_selection_to_clipboard", "delete_selection"]
-x = ["yank_main_selection_to_clipboard", "delete_selection"]
-y = ["yank_main_selection_to_clipboard", "normal_mode", "flip_selections", "collapse_selection"]
-Y = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "goto_line_start", "collapse_selection", "normal_mode"]
-
-p = "replace_selections_with_clipboard" # No life without this
-
-P = "paste_clipboard_before"
-
-# Escape the madness! No more fighting with the cursor! Or with multiple cursors!
-esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]

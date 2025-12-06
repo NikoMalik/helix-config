@@ -1,6 +1,6 @@
 [language-server.zls]
 # omit the following line if `zls` is in your PATH
-command = "/home/niko/src/zls/zig-out/bin/zls"
+command = "/home/niko/.local/bin/zls"
 # There are two ways to set config options:
 #   - edit your `zls.json` that applies to any editor that uses ZLS
 #   - set in-editor config options with the `config.<name>` fields below.
@@ -16,10 +16,11 @@ config.enable_build_on_save = true
 
 # omit the following line if `zig` is in your PATH
 # config.zig_exe_path = "/path/to/zig_executable"
-#
-#
-#
-#
+
+
+
+
+
 
 [[language]]
 name = "toml"
@@ -38,6 +39,10 @@ auto-format = true
 [[language]]
 name = "json"
 formatter = { command = "prettier", args = ["--parser", "json"] }
+
+[[language]]
+name = "markdown"
+language-servers = ["harper-ls"]
 
 
 [[language]]

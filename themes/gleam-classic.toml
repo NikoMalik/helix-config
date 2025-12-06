@@ -51,7 +51,8 @@ variable = "#ffffff"
 
 # UI
 
-"ui.background" = { bg = "#1e1e1e" }
+# "ui.background" = { bg = "#1e1e1e" }
+"ui.background" = {}
 
 "ui.gutter" = "#747478"
 "ui.gutter.selected" = "#ffffff"

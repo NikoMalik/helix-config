@@ -1,0 +1,99 @@
+# SYNTAX
+attribute                   = "#8B9698"
+keyword                     = "#cccccc"
+"keyword.directive"         = "#8B9698"
+namespace                   = "#AA9AAC"
+punctuation                 = "#d6d2c8"
+"punctuation.delimiter"     = "#d6d2c8"
+operator                    = "#DEBF7C"
+
+# ВСЕ ПЕРЕМЕННЫЕ БЕЛЫЕ
+variable                    = "#FEFEFE"
+"variable.parameter"        = { fg = "#FEFEFE" }
+"variable.builtin"          = "#FEFEFE"
+"variable.other.member"     = "#8B9698"
+
+type                        = "#E3D896"
+"type.builtin"              = "#E3D896"
+constructor                 = "#AA9AAC"
+function                    = "#AA9AAC"
+"function.builtin"          = "#AA9AAC"
+tag                         = "#C1C88D"
+comment                     = "#6f7b68"
+constant                    = "#cccccc"
+"constant.builtin"          = "#cccccc"
+"constant.numeric"          = "#6f7b68"
+"constant.character.escape" = "#cccccc"
+string                      = "#A2A970"
+label                       = "#cccccc"
+
+# INTERFACE
+"ui.background"               = { bg = "#202020", fg = "#FEFEFE" }
+"ui.background.separator"     = { fg = "#303030" }
+"ui.cursor"                   = { fg = "#1A1A1A", bg = "#C1C88D" }
+"ui.cursorline.primary"       = { bg = "#303030" }
+"ui.cursorline.secondary"     = { bg = "#262626" }
+"ui.cursorcolumn.primary"     = { bg = "#303030" }
+"ui.cursorcolumn.secondary"   = { bg = "#262626" }
+
+"ui.selection"                = { bg = "#454545" }
+"ui.selection.primary"        = { bg = "#454545" }
+
+"ui.linenr"                   = { fg = "#d6d2c8" }
+"ui.linenr.selected"          = { fg = "#888888", bg = "#222222" }
+
+"ui.statusline"               = { fg = "#FFFEDB", bg = "#34383C" }
+"ui.statusline.inactive"      = { fg = "#A09998", bg = "#212121" }
+
+"ui.popup"                    = { fg = "#918988", bg = "#303030" }
+"ui.menu"                     = { fg = "#C1C88D", bg = "#303030" }
+"ui.menu.selected"            = { fg = "#BFBBBA", bg = "#303030" }
+
+"ui.virtual.indent-guide"     = { fg = "#262626" }
+"ui.virtual.whitespace"       = { fg = "#303030" }
+
+"ui.text"                     = { fg = "#FEFEFE" }
+"ui.text.inactive"            = { fg = "#676767" }
+"ui.text.focus"               = { fg = "#1A1A1A", bg = "#C1C88D" }
+
+"ui.window"                   = { fg = "#888888" }
+"ui.help"                     = { fg = "#C1C88D" }
+
+"ui.gutter"                   = { fg = "#303030" }
+"ui.gutter.selected"          = { fg = "#d6d2c8" }
+
+"ui.virtual.ruler"            = { bg = "#262626" }
+
+"ui.highlight"                = { bg = "#5F5958", fg = "#FFFEDB" }
+"ui.cursor.match"             = { fg = "#FFFEDB" }
+
+"ui.debug.breakpoint"         = { fg = "#C34143" }
+"ui.debug.active"             = { fg = "#FFFEDB" }
+
+# DIAGNOSTICS
+"error"                       = { fg = "#C34143" }
+"diagnostic.error"            = { fg = "#C34143" }
+"diagnostic.warning"          = { fg = "#FFFEDB" }
+"diagnostic.info"             = { fg = "#FEFEFE" }
+"diagnostic.hint"             = { fg = "#FEFEFE" }
+
+[palette]
+white        = "#ffffff"
+platinum     = "#FEFEFE"
+dark_gray_1  = "#303030"
+dark_gray_2  = "#262626"
+dark_gray_3  = "#202020"
+gray_1       = "#d6d2c8"
+gray_2       = "#cccccc"
+gray_3       = "#918988"
+gray_4       = "#888888"
+gray_5       = "#6f7b68"
+gray_6       = "#676767"
+gray_7       = "#303030"
+
+# colors from vim theme
+special_green = "#C1C88D"
+number_gray   = "#6f7b68"
+string_green  = "#A2A970"
+error_red     = "#C34143"
+
