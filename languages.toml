@@ -92,8 +92,43 @@ rangeVariableTypes = true
 
 
 
-# [language-server.golangci-lint-lsp]
-# command = "golangci-lint-langserver"
+[language-server.golangci-lint-lsp]
+command = "golangci-lint-langserver"
 
-# [language-server.golangci-lint-lsp.config]
-# command = ["golangci-lint", "run", "--out-format", "json", "--issues-exit-code=1"]
+[language-server.golangci-lint-lsp.config]
+command = ["golangci-lint", "run", "--out-format", "json", "--issues-exit-code=1"]
+
+
+
+
+
+
+# --- Rust ----
+[[language]]
+name = "rust"
+auto-format = true
+formatter = { command = "rustfmt" }
+language-servers = ["rust-analyzer"]
+# comment-tokens = ["//", "///"] doesn't work as expected
+roots = [
+  "Cargo.toml",
+  "Cargo.lock"
+]
+
+
+[language-server.rust-analyzer]
+command = "rust-analyzer"
+
+[language-server.rust-analyzer.config]
+cargo.allFeatures = true
+check.command = "clippy"
+inlayHints.bindingModeHints.enable = false
+rust.sysroot = "none"
+cargo.loadOutDirsFromCheck = true
+inlayHints.closingBraceHints.minLines = 10
+inlayHints.closureReturnTypeHints.enable = "with_block"
+inlayHints.discriminantHints.enable = "fieldless"
+inlayHints.lifetimeElisionHints.enable = "skip_trivial"
+inlayHints.typeHints.hideClosureInitialization = false
+
+

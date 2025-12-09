@@ -10,10 +10,40 @@ scrolloff = 3
 auto-save = true
 auto-completion = true
 auto-format = true
+cursorline = true
 completion-replace = true
 mouse = true
-end-of-line-diagnostics = "info"
+# end-of-line-diagnostics = "info"
 line-number = "relative"
+bufferline = "multiple"
+default-yank-register = "+"
+smart-tab.enable = false
+lsp.auto-signature-help = false
+# inline-diagnostics.cursor-line = "hint"
+# inline-diagnostics.timeout = 500
+bufferline-directories = "always"
+end-of-line-diagnostics = "disable"
+
+
+[editor.inline-diagnostics]
+cursor-line = "disable"
+other-lines = "hint"
+
+[icons.vcs]
+enabled = true
+icon = "⌬"
+
+[icons.fs]
+enabled = true
+rust = "🦀"
+python = "🐍"
+
+[icons.diagnostic]
+warn = "▲"
+
+[icons.ui.virtual]
+ruler = "|"
+
 
 [editor.auto-pairs]
 '(' = ')'
@@ -24,11 +54,16 @@ line-number = "relative"
 '<' = '>'
 
 
-# end-of-line-diagnostics = "hint"
+
+[editor.file-picker]
+hidden = false
+git-ignore = true
+ignore = false
+
 
 
 [editor.soft-wrap]
-enable = true
+enable = false
 wrap-at-text-width = true
 # [editor.indent-guides]
 # character = "▏"  # Some characters that work well: "▏", "┆", "┊", "╎"
@@ -71,8 +106,8 @@ layout = ["diff", "diagnostics", "line-numbers", "spacer"]
 V = ":sh hemux"
 # h = ":sh tmux popup -d \"#{pane_current_path}\" -xC -yC -w80%% -h80%% -E "
 v = ":sh tmux split-window -v -p 20"
-n = ":sh tmux split-window -h -b -l 40 'yazi'"
-t = ":sh git blame -L %{cursor_line},%{cursor_line} %{buffer_name}"
+# n = ":sh tmux split-window -h -b -l 40 'yazi'"
+# t = ":sh git blame -L %{cursor_line},%{cursor_line} %{buffer_name}"
 # n = [
 #   ':sh rm -f /tmp/unique-file',
 #   ':sh rm -f /tmp/unique-cwd-file',
@@ -83,16 +118,16 @@ t = ":sh git blame -L %{cursor_line},%{cursor_line} %{buffer_name}"
 #   ':redraw',
 # ]
 
-[editor.inline-diagnostics]
-cursor-line = "warning"
-other-lines = "hint"
-#other-lines = "disable"
+# [editor.inline-diagnostics]
+# cursor-line = "disable"
+# # other-lines = "hint"
+# other-lines = "disable"
 
-[editor.lsp]
-# Enable inline hints
-display-inlay-hints = false
- # Show LSP messages in the status line
-display-messages = true
+# [editor.lsp]
+# # Enable inline hints
+# display-inlay-hints = false
+#  # Show LSP messages in the status line
+# display-messages = true
 
 [keys.insert.j]
 k = "normal_mode" # Maps `jk` to exit insert mode
@@ -114,44 +149,45 @@ G = "goto_file_end"
 "\\" = ":vsplit"
 "|" = ":hsplit"
 "C-C" = "copy_selection_on_prev_line"
-C-k = [
-  "yank_main_selection_to_clipboard",
-  "delete_selection",
-  "move_line_up",
-  "paste_clipboard_before",
-  "select_mode",
-]
-"C-e" = "move_parent_node_end"
-"C-b" = "move_parent_node_start"
+#DEFAULT: A-I
+# C-c = "select_all_children"
+X = "select_line_above"
+# C-k = [
+#   "yank_main_selection_to_clipboard",
+#   "delete_selection",
+#   "move_line_up",
+#   "paste_clipboard_before",
+#   "select_mode",
+# ]
+# "C-e" = "move_parent_node_end"
+# "C-b" = "move_parent_node_start"
 # "C-s" = "split_selection_on_newline"
 
 m = { t = "remove_primary_selection"}
-"C-(" = "rotate_selection_contents_backward"
-"C-)" = "rotate_selection_contents_forward"
+# "C-(" = "rotate_selection_contents_backward"
+# "C-)" = "rotate_selection_contents_forward"
 
-C-j = [
-  "yank_main_selection_to_clipboard",
-  "delete_selection",
-  "move_line_down",
-  "paste_clipboard_before",
-  "select_mode",
-]
+# C-j = [
+#   "yank_main_selection_to_clipboard",
+#   "delete_selection",
+#   "move_line_down",
+#   "paste_clipboard_before",
+#   "select_mode",
+# ]
 
 
 [keys.select]
-C-k = [
-  "yank_main_selection_to_clipboard",
-  "delete_selection",
-  "move_line_up",
-  "paste_clipboard_before",
-  "select_mode",
-]
-
-
-C-j = [
-  "yank_main_selection_to_clipboard",
-  "delete_selection",
-  "move_line_down",
-  "paste_clipboard_before",
-  "select_mode",
-]
+# C-k = [
+#   "yank_main_selection_to_clipboard",
+#   "delete_selection",
+#   "move_line_up",
+#   "paste_clipboard_before",
+#   "select_mode",
+# ]
+# C-j = [
+#   "yank_main_selection_to_clipboard",
+#   "delete_selection",
+#   "move_line_down",
+#   "paste_clipboard_before",
+#   "select_mode",
+# ]

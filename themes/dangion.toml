@@ -7,7 +7,6 @@ punctuation                 = "#d6d2c8"
 "punctuation.delimiter"     = "#d6d2c8"
 operator                    = "#DEBF7C"
 
-# ВСЕ ПЕРЕМЕННЫЕ БЕЛЫЕ
 variable                    = "#FEFEFE"
 "variable.parameter"        = { fg = "#FEFEFE" }
 "variable.builtin"          = "#FEFEFE"
@@ -54,7 +53,7 @@ label                       = "#cccccc"
 
 "ui.text"                     = { fg = "#FEFEFE" }
 "ui.text.inactive"            = { fg = "#676767" }
-"ui.text.focus"               = { fg = "#1A1A1A", bg = "#C1C88D" }
+"ui.text.focus"         = { fg = "#FEFEFE", bg = "#353535" }
 
 "ui.window"                   = { fg = "#888888" }
 "ui.help"                     = { fg = "#C1C88D" }
@@ -64,7 +63,9 @@ label                       = "#cccccc"
 
 "ui.virtual.ruler"            = { bg = "#262626" }
 
-"ui.highlight"                = { bg = "#5F5958", fg = "#FFFEDB" }
+"ui.highlight" = { bg = "#353535", fg = "#FEFEFE" }
+
+
 "ui.cursor.match"             = { fg = "#FFFEDB" }
 
 "ui.debug.breakpoint"         = { fg = "#C34143" }
