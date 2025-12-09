@@ -71,12 +71,23 @@ label                       = "#cccccc"
 "ui.debug.breakpoint"         = { fg = "#C34143" }
 "ui.debug.active"             = { fg = "#FFFEDB" }
 
+
+
+
+warning = "red194"
+error = "error_red"
+info = "blue247"
+hint = "green156"
+
+
 # DIAGNOSTICS
-"error"                       = { fg = "#C34143" }
-"diagnostic.error"            = { fg = "#C34143" }
-"diagnostic.warning"          = { fg = "#FFFEDB" }
-"diagnostic.info"             = { fg = "#FEFEFE" }
-"diagnostic.hint"             = { fg = "#FEFEFE" }
+"diagnostic" = { underline = { style = "curl" } }
+"diagnostic.hint" = { underline = { color = "green156", style = "curl" } }
+"diagnostic.info" = { underline = { color = "blue247", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "red194", style = "curl" } }
+"diagnostic.error" = { underline = { color = "red214", style = "curl" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"diagnostic.deprecated" = { modifiers = ["crossed_out"] }
 
 [palette]
 white        = "#ffffff"
@@ -97,4 +108,10 @@ special_green = "#C1C88D"
 number_gray   = "#6f7b68"
 string_green  = "#A2A970"
 error_red     = "#C34143"
+red194 = "#c29e4a"
+blue247 = "#57aaf7"
+green156 = "#499c54"
+
+
+
 

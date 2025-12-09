@@ -13,17 +13,16 @@ auto-format = true
 cursorline = true
 completion-replace = true
 mouse = true
-# end-of-line-diagnostics = "info"
+end-of-line-diagnostics = "info"
 line-number = "relative"
 bufferline = "multiple"
 default-yank-register = "+"
 smart-tab.enable = false
 lsp.auto-signature-help = false
-# inline-diagnostics.cursor-line = "hint"
+lsp.display-inlay-hints = false
 # inline-diagnostics.timeout = 500
 bufferline-directories = "always"
-end-of-line-diagnostics = "disable"
-
+# end-of-line-diagnostics = "disable"
 
 [editor.inline-diagnostics]
 cursor-line = "disable"
@@ -63,8 +62,11 @@ ignore = false
 
 
 [editor.soft-wrap]
-enable = false
-wrap-at-text-width = true
+enable = true
+# wrap-at-text-width = true
+max-wrap = 5
+max-indent-retain = 0
+wrap-indicator = "" 
 # [editor.indent-guides]
 # character = "▏"  # Some characters that work well: "▏", "┆", "┊", "╎"
 # render = true
@@ -118,16 +120,7 @@ v = ":sh tmux split-window -v -p 20"
 #   ':redraw',
 # ]
 
-# [editor.inline-diagnostics]
-# cursor-line = "disable"
-# # other-lines = "hint"
-# other-lines = "disable"
 
-# [editor.lsp]
-# # Enable inline hints
-# display-inlay-hints = false
-#  # Show LSP messages in the status line
-# display-messages = true
 
 [keys.insert.j]
 k = "normal_mode" # Maps `jk` to exit insert mode
