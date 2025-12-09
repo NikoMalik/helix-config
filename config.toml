@@ -13,7 +13,7 @@ auto-format = true
 cursorline = true
 completion-replace = true
 mouse = true
-end-of-line-diagnostics = "info"
+# end-of-line-diagnostics = "info"
 line-number = "relative"
 bufferline = "multiple"
 default-yank-register = "+"
@@ -22,7 +22,35 @@ lsp.auto-signature-help = false
 lsp.display-inlay-hints = false
 # inline-diagnostics.timeout = 500
 bufferline-directories = "always"
-# end-of-line-diagnostics = "disable"
+end-of-line-diagnostics = "disable"
+
+[editor.completion-item-kinds]
+text = ""
+method = "󰆧"
+function = "󰊕"
+constructor = ""
+field = "󰇽"
+variable = "󰂡"
+class = "󰠱"
+interface = ""
+module = ""
+property = "󰜢"
+unit = ""
+value = "󰎠"
+enum = ""
+keyword = "󰌋"
+snippet = ""
+color = "󰏘"
+file = "󰈙"
+reference = ""
+folder = "󰉋"
+link = "󱧮"
+enum-member = ""
+constant = "󰏿"
+struct = ""
+event = ""
+operator = "󰆕"
+type-parameter = "󰅲"
 
 [editor.inline-diagnostics]
 cursor-line = "disable"
