@@ -62,7 +62,7 @@ ignore = false
 
 
 [editor.soft-wrap]
-enable = true
+enable = false
 # wrap-at-text-width = true
 max-wrap = 5
 max-indent-retain = 0
